@@ -161,34 +161,36 @@ export default function Index() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col justify-center items-center px-6 md:px-0 pb-24 pt-16 text-center min-h-[788px]">
-          <div className="max-w-4xl mx-auto space-y-10">
+          <div className="max-w-4xl mx-auto space-y-26">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 border border-eclipse-purple rounded-full">
+            <div className="inline-flex items-center gap-2 px-6 py-3 border border-eclipse-purple rounded-full mb-10">
               <span className="text-eclipse-purple-bg font-alliance text-sm uppercase tracking-wide leading-none">
                 Inovação, criatividade e performance
               </span>
             </div>
 
             {/* Main Content */}
-            <div className="space-y-4">
+            <div className="space-y-4 mb-10">
               {/* Title */}
-              <h1 className="text-eclipse-white font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%]">
-                Somos a conexão entre
-              </h1>
+              <div className="max-w-[708px] mx-auto">
+                <h1 className="text-eclipse-white font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%] mb-4">
+                  Somos a conexão entre
+                </h1>
 
-              {/* Dynamic Text */}
-              <div className="text-eclipse-purple-bg font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%]">
-                <RotatingText />
+                {/* Static Text */}
+                <div className="text-eclipse-purple-bg font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%]">
+                  criadores de conteúdo
+                </div>
               </div>
 
               {/* Subtitle */}
-              <p className="text-eclipse-gray font-funnel text-lg md:text-xl leading-[140%] max-w-2xl mx-auto pt-4">
+              <p className="text-eclipse-gray font-funnel text-lg md:text-xl leading-[140%] max-w-2xl mx-auto pt-6">
                 Elevamos a sua marca para o próximo nível.
               </p>
             </div>
 
             {/* Special Button */}
-            <div className="inline-flex p-1 rounded-full border-t border-eclipse-purple">
+            <div className="inline-flex p-1 rounded-full border-t border-eclipse-purple mb-10">
               <button className="flex items-center gap-2 group">
                 <span className="flex items-center h-12 px-6 rounded-full bg-eclipse-purple text-eclipse-white font-funnel text-base font-medium leading-none transition-colors duration-300 group-hover:bg-[#7B34FF]">
                   Agende uma call com nosso time
