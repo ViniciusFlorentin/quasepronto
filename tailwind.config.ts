@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'funnel': ['Funnel Display', '-apple-system', 'system-ui', 'sans-serif'],
+        'alliance': ['Alliance No.1', '-apple-system', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +60,18 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Eclipse Road Brand Colors
+        eclipse: {
+          dark: "#100426",
+          purple: "#8A4BFF",
+          light: "#F4EFFF",
+          white: "#FBF9FF",
+          gray: "#C4C4C4",
+          'purple-light': "#DB9EFF",
+          'purple-bg': "#C9B3F1",
+          'light-purple': "#E6DEF8",
+          'border-purple': "#4D4659",
         },
       },
       borderRadius: {
