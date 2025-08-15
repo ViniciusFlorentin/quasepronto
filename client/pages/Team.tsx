@@ -8,16 +8,35 @@ export default function Team() {
           Nosso Time
         </h1>
         <p className="text-xl text-eclipse-gray font-funnel mb-8">
-          Esta página está sendo desenvolvida. Em breve você poderá conhecer toda a equipe Eclipse Road.
+          Esta página está sendo desenvolvida. Em breve você poderá conhecer
+          toda a equipe Eclipse Road.
         </p>
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center gap-2 bg-eclipse-purple text-eclipse-white font-funnel text-base px-8 py-4 rounded-full hover:bg-opacity-90 transition-opacity"
         >
           Voltar ao início
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-            <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="w-5 h-5"
+          >
+            <path
+              d="M20 12H4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </Link>
       </div>

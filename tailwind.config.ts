@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'funnel': ['Funnel Display', '-apple-system', 'system-ui', 'sans-serif'],
-        'alliance': ['Alliance No.1', '-apple-system', 'system-ui', 'sans-serif'],
+        funnel: ["Funnel Display", "-apple-system", "system-ui", "sans-serif"],
+        alliance: ["Alliance No.1", "-apple-system", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -68,10 +68,10 @@ export default {
           light: "#F4EFFF",
           white: "#FBF9FF",
           gray: "#C4C4C4",
-          'purple-light': "#DB9EFF",
-          'purple-bg': "#C9B3F1",
-          'light-purple': "#E6DEF8",
-          'border-purple': "#4D4659",
+          "purple-light": "#DB9EFF",
+          "purple-bg": "#C9B3F1",
+          "light-purple": "#E6DEF8",
+          "border-purple": "#4D4659",
         },
       },
       borderRadius: {
