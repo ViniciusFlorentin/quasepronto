@@ -111,19 +111,30 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-eclipse-light">
       {/* Hero Section */}
-      <section className="bg-eclipse-dark relative overflow-hidden">
+      <section className="bg-eclipse-dark relative overflow-hidden min-h-screen">
         {/* Background lighting effects */}
         <div className="absolute inset-0">
-          <div className="absolute -top-32 -left-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-60"></div>
-          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-60"></div>
+          <div className="absolute -top-32 -left-32 w-[455px] h-[455px] bg-eclipse-purple rounded-full blur-[250px]"></div>
+          <div className="absolute -bottom-32 -right-32 w-[455px] h-[455px] bg-eclipse-purple rounded-full blur-[250px]"></div>
         </div>
-        
+
+        {/* Background decorative line */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[2821px] h-[388px] pointer-events-none">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/284c943875036b0638b53cb06462c16a14739a8e?width=5641"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+
         {/* Navigation */}
-        <nav className="relative z-10 flex items-center justify-between px-6 md:px-24 py-8">
-          <div className="text-eclipse-white font-funnel text-xl font-bold">
-            ECLIPSE
-          </div>
-          
+        <nav className="relative z-10 flex items-center justify-between px-6 md:px-24 py-8 h-28">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/dc8b6fd3223942cb1bcbc3b8f10ba997e005676f?width=222"
+            alt="Eclipse Logo"
+            className="w-[111px] h-[33px]"
+          />
+
           <div className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-eclipse-white font-funnel text-lg hover:text-eclipse-purple-light transition-colors">
               Inicio
@@ -138,53 +149,85 @@ export default function Index() {
               Sobre nós
             </Link>
           </div>
-          
-          <button className="bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-3 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-opacity">
+
+          <button className="bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-4 rounded-full flex items-center gap-2 h-12 hover:bg-opacity-90 transition-opacity">
             Solicitar orçamento
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-              <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+              <path d="M20.0001 11.9998H4.00012" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </nav>
-        
+
         {/* Hero Content */}
-        <div className="relative z-10 px-6 md:px-24 pb-24 pt-16 text-center">
+        <div className="relative z-10 flex flex-col justify-center items-center px-6 md:px-0 pb-24 pt-16 text-center min-h-[788px]">
           <div className="max-w-4xl mx-auto space-y-10">
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-6 py-3 border border-eclipse-purple rounded-full">
-              <span className="text-eclipse-purple-bg font-alliance text-sm uppercase tracking-wide">
+              <span className="text-eclipse-purple-bg font-alliance text-sm uppercase tracking-wide leading-none">
                 Inovação, criatividade e performance
               </span>
             </div>
-            
-            <div className="space-y-6">
-              <h1 className="text-eclipse-white font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-tight">
+
+            {/* Main Content */}
+            <div className="space-y-4">
+              {/* Title */}
+              <h1 className="text-eclipse-white font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%]">
                 Somos a conexão entre
               </h1>
-              <div className="text-4xl md:text-6xl lg:text-7xl font-funnel leading-tight">
+
+              {/* Dynamic Text */}
+              <div className="text-eclipse-purple-bg font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-[110%]">
                 <RotatingText />
               </div>
-              <p className="text-eclipse-gray font-funnel text-lg md:text-xl max-w-2xl mx-auto">
+
+              {/* Subtitle */}
+              <p className="text-eclipse-gray font-funnel text-lg md:text-xl leading-[140%] max-w-2xl mx-auto pt-4">
                 Elevamos a sua marca para o próximo nível.
               </p>
             </div>
-            
-            <button className="bg-eclipse-purple text-eclipse-white font-funnel text-lg px-8 py-4 rounded-full flex items-center gap-3 mx-auto hover:bg-opacity-90 transition-opacity">
-              Agende uma call com nosso time
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-                <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            
+
+            {/* Special Button */}
+            <div className="inline-flex p-1 rounded-full border-t border-eclipse-purple">
+              <button className="flex items-center gap-2 group">
+                <span className="flex items-center h-12 px-6 rounded-full bg-eclipse-purple text-eclipse-white font-funnel text-base font-medium leading-none transition-colors duration-300 group-hover:bg-[#7B34FF]">
+                  Agende uma call com nosso time
+                </span>
+
+                <div className="flex justify-center items-center w-12 h-12 rounded-full bg-eclipse-purple flex-shrink-0 transition-colors duration-300 group-hover:bg-[#7B34FF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.0001 11.9998H4.00012" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+
+            {/* Social Proof */}
             <div className="flex items-center justify-center gap-4">
               <div className="flex -space-x-3">
-                <div className="w-8 h-8 bg-eclipse-purple rounded-full border-2 border-eclipse-dark"></div>
-                <div className="w-8 h-8 bg-eclipse-purple-light rounded-full border-2 border-eclipse-dark"></div>
-                <div className="w-8 h-8 bg-eclipse-light rounded-full border-2 border-eclipse-dark"></div>
-                <div className="w-8 h-8 bg-eclipse-gray rounded-full border-2 border-eclipse-dark"></div>
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/f799985afc1f3e9e73459bb3a4abcc87b1d9e8ea?width=64"
+                  alt=""
+                  className="w-8 h-8 rounded-full border border-eclipse-dark"
+                />
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/159d45e0a55b9acf6f55942e16fffa0f72027abf?width=64"
+                  alt=""
+                  className="w-8 h-8 rounded-full border border-eclipse-dark"
+                />
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/a479d3154381e084be27a79b6581e4a58e3f1984?width=64"
+                  alt=""
+                  className="w-8 h-8 rounded-full border border-eclipse-dark"
+                />
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/7913815472d86e70f8a1e56f3727a8be6fca0c1e?width=64"
+                  alt=""
+                  className="w-8 h-8 rounded-full border border-eclipse-dark"
+                />
               </div>
-              <span className="text-eclipse-white font-funnel text-base">
+              <span className="text-eclipse-white font-funnel text-base leading-[140%]">
                 Parcerias que geram visibilidade, engajamento e vendas.
               </span>
             </div>
