@@ -1,62 +1,473 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const RotatingText = () => {
+  const texts = [
+    "criadores de conteúdo",
+    "grandes marcas",
+    "criatividade e resultado",
+    "influência e estratégia",
+    "conteúdo e audiência"
+  ];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <span className="text-eclipse-purple-bg transition-all duration-500">
+      {texts[currentIndex]}
+    </span>
+  );
+};
+
+const ServiceCard = ({ icon, title, description, className = "" }: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+}) => (
+  <div className={`bg-eclipse-dark p-8 md:p-16 rounded-2xl md:rounded-3xl flex flex-col gap-6 ${className}`}>
+    <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center border-4 border-eclipse-purple-light">
+      {icon}
+    </div>
+    <div className="space-y-4">
+      <h3 className="text-eclipse-purple-light font-funnel text-xl md:text-2xl font-bold leading-tight">
+        {title}
+      </h3>
+      <p className="text-eclipse-light font-funnel text-sm md:text-base leading-relaxed">
+        {description}
+      </p>
+    </div>
+  </div>
+);
+
+const StatCard = ({ value, label }: { value: string; label: string }) => (
+  <div className="relative">
+    <div className="bg-eclipse-dark border border-eclipse-border-purple rounded-2xl p-8 space-y-4">
+      <div className="text-eclipse-purple-light font-funnel text-4xl md:text-5xl font-bold">
+        {value}
+      </div>
+      <div className="text-eclipse-white font-funnel text-lg">
+        {label}
+      </div>
+    </div>
+    <div className="absolute inset-0 bg-eclipse-dark border-t border-eclipse-purple-light rounded-2xl pointer-events-none"></div>
+  </div>
+);
+
+const AgencyCard = ({ name, description, image, socials }: {
+  name: string;
+  description: string;
+  image: string;
+  socials: string[];
+}) => (
+  <div className="bg-eclipse-light-purple border-2 border-eclipse-dark rounded-2xl p-8 space-y-8 min-w-[400px] md:min-w-[500px]">
+    <div className="flex gap-8">
+      <img 
+        src={image} 
+        alt={name}
+        className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover"
+      />
+      <div className="flex-1 space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-eclipse-dark font-funnel text-2xl md:text-3xl font-bold">
+            {name}
+          </h3>
+          <p className="text-eclipse-dark font-funnel text-sm md:text-base leading-relaxed">
+            {description}
+          </p>
+        </div>
+        <div className="flex gap-2">
+          {socials.map((social, index) => (
+            <div key={index} className="w-8 h-8 bg-eclipse-dark rounded-lg"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <button className="w-full bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition-opacity">
+      Ver mídia kit
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+        <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </button>
+  </div>
+);
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+    <div className="min-h-screen bg-eclipse-light">
+      {/* Hero Section */}
+      <section className="bg-eclipse-dark relative overflow-hidden">
+        {/* Background lighting effects */}
+        <div className="absolute inset-0">
+          <div className="absolute -top-32 -left-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-60"></div>
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-60"></div>
+        </div>
+        
+        {/* Navigation */}
+        <nav className="relative z-10 flex items-center justify-between px-6 md:px-24 py-8">
+          <div className="text-eclipse-white font-funnel text-xl font-bold">
+            ECLIPSE
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/" className="text-eclipse-white font-funnel text-lg hover:text-eclipse-purple-light transition-colors">
+              Inicio
+            </Link>
+            <Link to="/influencers" className="text-eclipse-white font-funnel text-lg hover:text-eclipse-purple-light transition-colors">
+              Nossos influenciadores
+            </Link>
+            <Link to="/team" className="text-eclipse-white font-funnel text-lg hover:text-eclipse-purple-light transition-colors">
+              Nosso time
+            </Link>
+            <Link to="/about" className="text-eclipse-white font-funnel text-lg hover:text-eclipse-purple-light transition-colors">
+              Sobre nós
+            </Link>
+          </div>
+          
+          <button className="bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-3 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-opacity">
+            Solicitar orçamento
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+              <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </nav>
+        
+        {/* Hero Content */}
+        <div className="relative z-10 px-6 md:px-24 pb-24 pt-16 text-center">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="inline-flex items-center gap-2 px-6 py-3 border border-eclipse-purple rounded-full">
+              <span className="text-eclipse-purple-bg font-alliance text-sm uppercase tracking-wide">
+                Inovação, criatividade e performance
+              </span>
+            </div>
+            
+            <div className="space-y-6">
+              <h1 className="text-eclipse-white font-funnel text-4xl md:text-6xl lg:text-7xl font-normal leading-tight">
+                Somos a conexão entre
+              </h1>
+              <div className="text-4xl md:text-6xl lg:text-7xl font-funnel leading-tight">
+                <RotatingText />
+              </div>
+              <p className="text-eclipse-gray font-funnel text-lg md:text-xl max-w-2xl mx-auto">
+                Elevamos a sua marca para o próximo nível.
+              </p>
+            </div>
+            
+            <button className="bg-eclipse-purple text-eclipse-white font-funnel text-lg px-8 py-4 rounded-full flex items-center gap-3 mx-auto hover:bg-opacity-90 transition-opacity">
+              Agende uma call com nosso time
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+                <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex -space-x-3">
+                <div className="w-8 h-8 bg-eclipse-purple rounded-full border-2 border-eclipse-dark"></div>
+                <div className="w-8 h-8 bg-eclipse-purple-light rounded-full border-2 border-eclipse-dark"></div>
+                <div className="w-8 h-8 bg-eclipse-light rounded-full border-2 border-eclipse-dark"></div>
+                <div className="w-8 h-8 bg-eclipse-gray rounded-full border-2 border-eclipse-dark"></div>
+              </div>
+              <span className="text-eclipse-white font-funnel text-base">
+                Parcerias que geram visibilidade, engajamento e vendas.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="px-6 md:px-24 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-16">
+            <div className="space-y-6">
+              <h2 className="text-eclipse-dark font-funnel text-4xl md:text-6xl font-normal leading-tight">
+                Nossos<br />serviços
+              </h2>
+            </div>
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 bg-eclipse-light-purple rounded-full flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-eclipse-dark">
+                  <path d="M14.0218 2.7239C14.2611 3.03528 14.296 3.45789 14.111 3.8043C13.3324 5.26249 12.8906 6.92805 12.8906 8.69976C12.8906 14.4489 17.5511 19.1094 23.3002 19.1094C25.0719 19.1094 26.7375 18.6676 28.1956 17.889C28.542 17.704 28.9647 17.7389 29.276 17.9782C29.5875 18.2176 29.7299 18.6169 29.6403 18.9993C28.2075 25.1132 22.7212 29.6666 16.1692 29.6666C8.52789 29.6666 2.33337 23.4721 2.33337 15.8308C2.33337 9.2787 6.88677 3.79256 13.0007 2.35968C13.3831 2.27006 13.7824 2.41254 14.0218 2.7239Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <p className="text-eclipse-gray font-funnel text-lg md:text-xl max-w-sm">
+                Conheça as soluções que oferecemos para conectar marcas, criadores e resultados em diferentes plataformas.
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ServiceCard
+              className="lg:col-span-1 rounded-t-[4rem] rounded-br-2xl rounded-bl-2xl"
+              icon={
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-eclipse-dark">
+                  <path d="M2.3569 2.78113C2.52359 2.45513 2.85886 2.25 3.225 2.25H8.1C8.41308 2.25 8.70711 2.40034 8.89041 2.65415L13.5354 9.08571L20.0856 2.53557C20.4663 2.15481 21.0837 2.15481 21.4644 2.53557C21.8452 2.91633 21.8452 3.53367 21.4644 3.91443L14.6919 10.687L21.5654 20.2041C21.7798 20.501 21.8098 20.8929 21.6431 21.2189C21.4764 21.5449 21.1411 21.75 20.775 21.75H15.9C15.5869 21.75 15.2929 21.5997 15.1096 21.3459L10.4646 14.9143L3.91443 21.4644C3.53367 21.8452 2.91634 21.8452 2.53557 21.4644C2.15481 21.0837 2.15481 20.4663 2.53557 20.0856L9.30811 13.313L2.43459 3.79585C2.22022 3.49903 2.19021 3.10713 2.3569 2.78113Z" fill="currentColor"/>
+                </svg>
+              }
+              title="Facilitando o marketing pelo Twitter"
+              description="No X, transformamos ideias em resultados. Somos especialistas em ampliar o alcance das suas campanhas e levar sua marca para novas redes e públicos."
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
+            
+            <ServiceCard
+              icon={
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-eclipse-dark">
+                  <path d="M11.1525 1.31827C11.2667 1.25339 11.4052 1.253 11.6823 1.25222L11.8881 1.25161C12.8696 1.24865 13.8524 1.24568 14.833 1.28283C15.2678 1.29931 15.4853 1.30755 15.5666 1.45848C15.648 1.60941 15.5338 1.79812 15.3055 2.17554L12.9793 6.02089C12.8368 6.25655 12.7655 6.37438 12.6512 6.43884C12.5368 6.50329 12.3991 6.50329 12.1237 6.50329H8.67266C8.35944 6.50329 8.20282 6.50329 8.14538 6.40183C8.08793 6.30037 8.16851 6.16608 8.32966 5.8975L10.825 1.73861C10.9672 1.50164 11.0383 1.38314 11.1525 1.31827Z" fill="currentColor"/>
+                </svg>
+              }
+              title="Conteúdo profissional para sua marca"
+              description="Impulsione seus resultados com uma estratégia de conteúdo dinâmica, que prende a atenção, fortalece sua marca e mantém seu público engajado."
             />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+            
+            <ServiceCard
+              icon={
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-eclipse-dark">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3.25 10.9286C3.25 6.1356 7.16751 2.25012 12 2.25012C16.8325 2.25012 20.75 6.1356 20.75 10.9286C20.75 12.5077 20.3239 13.9911 19.5788 15.2685C19.3099 15.7295 18.7152 15.887 18.2504 15.6204C17.7857 15.3537 17.6268 14.7638 17.8957 14.3029C18.4742 13.311 18.8056 12.1596 18.8056 10.9286C18.8056 7.20071 15.7586 4.17867 12 4.17867C8.2414 4.17867 5.19444 7.20071 5.19444 10.9286C5.19444 12.1596 5.52583 13.311 6.10431 14.3029C6.37317 14.7638 6.21435 15.3537 5.74957 15.6204C5.28479 15.887 4.69005 15.7295 4.42119 15.2685C3.67612 13.9911 3.25 12.5077 3.25 10.9286Z" fill="currentColor"/>
+                </svg>
+              }
+              title="Criação de campanhas e textos persuasivos"
+              description="Adaptamos cada campanha ao seu público e às exigências de cada plataforma, garantindo uma comunicação eficaz e a expansão da sua marca."
+            />
+            
+            <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <ServiceCard
+                icon={
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-eclipse-dark">
+                    <path d="M16.999 11.9704C16.999 12.5227 16.5513 12.9704 15.999 12.9704C15.8307 12.9704 15.6722 12.9288 15.533 12.8554C15.5101 12.8433 15.4896 12.8273 15.4712 12.809L14.1681 11.5114C14.0604 11.4041 13.8895 11.3947 13.7689 11.4872C11.3507 13.3419 8.86807 14.2442 6.80123 14.6632C5.38063 14.9512 4.15687 15.0112 3.28244 14.9984C2.99883 14.9943 2.75131 14.9825 2.54501 14.9683C2.37972 14.9569 2.25895 14.81 2.27482 14.6451L2.40894 13.2515C2.42481 13.0866 2.57131 12.9661 2.73666 12.9766C2.89837 12.9869 3.09118 12.9954 3.31153 12.9986C4.06968 13.0097 5.14769 12.9577 6.40387 12.7031C8.14149 12.3508 10.2209 11.6114 12.276 10.1066C12.4225 9.99939 12.4363 9.78692 12.3077 9.65883L11.15 8.50604C11.1293 8.48541 11.1114 8.462 11.0986 8.43568C11.0348 8.30399 10.999 8.15619 10.999 8.00001C10.999 7.44773 11.4467 7.00001 11.999 7.00001H14.0532C14.4775 6.99993 14.8891 6.99985 15.2286 7.04514C15.6104 7.0961 16.0471 7.2202 16.4106 7.58101C16.7751 7.94284 16.9015 8.37929 16.9533 8.76183C16.9992 9.10024 16.9991 9.51023 16.999 9.93069V11.9704Z" fill="currentColor"/>
+                  </svg>
+                }
+                title="Relacionamentos que impulsionam resultados"
+                description="Fazemos o match entre criadores e marcas alinhadas em valores e objetivos, fortalecendo cada parceria com propósito e resultado."
+              />
+              
+              <ServiceCard
+                className="rounded-t-2xl rounded-bl-2xl rounded-br-[4rem]"
+                icon={
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-eclipse-dark">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M3.25006 10.9286C3.25006 6.1356 7.16757 2.25012 12.0001 2.25012C16.8326 2.25012 20.7501 6.1356 20.7501 10.9286C20.7501 12.5077 20.324 13.9911 19.5789 15.2685C19.31 15.7295 18.7153 15.887 18.2505 15.6204C17.7858 15.3537 17.6269 14.7638 17.8958 14.3029C18.4743 13.311 18.8057 12.1596 18.8057 10.9286C18.8057 7.20071 15.7587 4.17867 12.0001 4.17867C8.24146 4.17867 5.1945 7.20071 5.1945 10.9286C5.1945 12.1596 5.52589 13.311 6.10437 14.3029C6.37323 14.7638 6.21441 15.3537 5.74963 15.6204C5.28485 15.887 4.69011 15.7295 4.42125 15.2685C3.67618 13.9911 3.25006 12.5077 3.25006 10.9286Z" fill="currentColor"/>
+                  </svg>
+                }
+                title="Parceiros de conteúdo"
+                description="Gerenciamos perfis de influenciadores com suporte completo para ampliar seu alcance, influência e desempenho em campanhas publicitárias."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="bg-eclipse-dark relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute -top-32 right-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-40"></div>
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-eclipse-purple rounded-full blur-[150px] opacity-40"></div>
+        </div>
+        
+        <div className="relative z-10 px-6 md:px-24 py-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-20">
+              <h2 className="text-eclipse-white font-funnel text-4xl md:text-6xl font-normal leading-tight">
+                Alcance que se <span className="text-eclipse-purple-light">traduz em resultado</span>
+              </h2>
+              <p className="text-eclipse-purple-light font-funnel text-lg md:text-xl max-w-md">
+                Estes <span className="text-eclipse-purple-light">números são mensais</span> e refletem nosso alcance de forma transparente.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <StatCard value="+17M" label="Visualizações no YouTube" />
+              <StatCard value="+85M" label="Visualizações no Instagram" />
+              <StatCard value="+3.5B" label="Impressões no Twitter" />
+              <StatCard value="+3.1M" label="Seguidores nas mídias" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Agency Section */}
+      <section className="px-6 md:px-24 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-12">
+            <h2 className="text-eclipse-dark font-funnel text-4xl md:text-5xl font-normal">
+              Agenciados
+            </h2>
+            <div className="flex gap-2">
+              <div className="w-6 h-2 bg-eclipse-purple rounded-full"></div>
+              <div className="w-2 h-2 bg-eclipse-purple-light rounded-full"></div>
+              <div className="w-2 h-2 bg-eclipse-purple-light rounded-full"></div>
+              <div className="w-2 h-2 bg-eclipse-purple-light rounded-full"></div>
+            </div>
+          </div>
+          
+          <div className="flex gap-6 overflow-x-auto pb-6">
+            <AgencyCard
+              name="Zanfa"
+              description="Zanfa é dono de um perfil humorístico extremamente engajado na rede social X. Mesmo com 300 mil seguidores, a conta tem uma das maiores impressões do site brasileiro."
+              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+              socials={["twitter", "facebook", "instagram"]}
+            />
+            <AgencyCard
+              name="Filipe Leme"
+              description="Zanfa é dono de um perfil humorístico extremamente engajado na rede social X. Mesmo com 300 mil seguidores, a conta tem uma das maiores impressões do site brasileiro."
+              image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+              socials={["twitter", "youtube", "tiktok"]}
+            />
+          </div>
+          
+          <div className="text-center mt-12">
+            <button className="text-eclipse-dark font-funnel text-base px-6 py-3 border-b border-eclipse-purple flex items-center gap-2 mx-auto hover:text-eclipse-purple transition-colors">
+              Ver todos os influenciadores
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 md:px-24 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-eclipse-dark to-purple-900 rounded-3xl p-12 relative overflow-hidden">
+            <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%238A4BFF\" fill-opacity=\"0.1\"%3E%3Cpath d=\"m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"}></div>
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-eclipse-white font-funnel text-3xl md:text-4xl font-normal mb-6">
+                Empresas, influenciadores e freelancers, vamos conversar?
+              </h2>
+              <p className="text-eclipse-gray font-funnel text-lg mb-8">
+                Uma parceria <span className="text-eclipse-purple-light">estratégica para alcançar resultados</span> e fortalecer a sua presença digital.
+              </p>
+              <button className="bg-eclipse-purple text-eclipse-white font-funnel text-base px-8 py-4 rounded-full flex items-center gap-3 hover:bg-opacity-90 transition-opacity">
+                Agende uma call com nosso time
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                  <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-eclipse-dark to-purple-900 px-6 md:px-24 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <div className="text-eclipse-white font-funnel text-xl font-bold mb-8">
+              ECLIPSE
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div className="space-y-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
+                Institucional
+              </h3>
+              <div className="space-y-3">
+                <Link to="/agency" className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors">
+                  Agenciados
+                </Link>
+                <Link to="/about" className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors">
+                  Sobre nós
+                </Link>
+                <Link to="/team" className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors">
+                  Nosso time
+                </Link>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
+                Contato
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-purple-800 rounded-full flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-eclipse-white">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M8.89798 2.12547C7.75709 2.09684 6.90951 2.09685 5.76863 2.12547L5.72497 2.12657C4.8445 2.14864 4.12007 2.1668 3.53618 2.26836C2.91647 2.37615 2.39758 2.58607 1.9581 3.02668C1.52091 3.46498 1.31158 3.97569 1.20554 4.5856C1.10601 5.15797 1.09095 5.8643 1.07272 6.71916L1.07178 6.76314C1.05936 7.34531 1.05937 7.65442 1.0718 8.23653L1.07274 8.28051C1.09096 9.13539 1.10602 9.84169 1.20554 10.4141C1.31159 11.024 1.52092 11.5347 1.9581 11.973C2.39759 12.4136 2.91647 12.6235 3.53619 12.7313C4.12008 12.8329 4.84451 12.851 5.72497 12.8731L5.76864 12.8742C6.90951 12.9028 7.75709 12.9028 8.89798 12.8742L8.94161 12.8731C9.82209 12.851 10.5465 12.8328 11.1305 12.7313C11.7501 12.6235 12.269 12.4136 12.7085 11.973C13.1457 11.5347 13.3551 11.024 13.461 10.4141C13.5606 9.84169 13.5757 9.13539 13.5939 8.28051L13.5948 8.23653C13.6072 7.65436 13.6072 7.34531 13.5948 6.76314L13.5939 6.71922C13.5757 5.86433 13.5606 5.15797 13.461 4.5856C13.355 3.97569 13.1457 3.46498 12.7085 3.02668C12.4616 2.77908 12.1895 2.60433 11.8886 2.4796C11.8428 2.45461 11.7937 2.43576 11.7425 2.42373C11.5502 2.35591 11.3464 2.30593 11.1304 2.26836C10.5465 2.1668 9.82209 2.14864 8.94161 2.12657L8.89798 2.12547ZM12.3965 5.66251C12.3852 5.42596 12.3795 5.30769 12.2939 5.26047C12.2083 5.21325 12.1029 5.27291 11.8923 5.39223L9.42152 6.79225C8.66336 7.22182 8.02222 7.49984 7.33319 7.49984C6.64415 7.49984 6.00299 7.22182 5.24488 6.79225L2.77423 5.39236C2.56364 5.27304 2.45834 5.21337 2.37268 5.26059C2.28703 5.30781 2.28138 5.42609 2.2701 5.66264C2.2549 5.98144 2.24665 6.35102 2.23732 6.78799C2.22524 7.35354 2.22525 7.64614 2.23733 8.21168C2.25676 9.12168 2.27149 9.73943 2.35416 10.2148C2.432 10.6626 2.56186 10.9285 2.78401 11.1512C3.00386 11.3717 3.27346 11.5037 3.73621 11.5842C4.22515 11.6693 4.86287 11.6868 5.79792 11.7102C6.91925 11.7383 7.74735 11.7383 8.86869 11.7102C9.80372 11.6868 10.4415 11.6693 10.9304 11.5842C11.3931 11.5037 11.6627 11.3717 11.8826 11.1512C12.1047 10.9285 12.2346 10.6626 12.3125 10.2148C12.3951 9.73943 12.4099 9.12168 12.4293 8.21168C12.4414 7.64614 12.4414 7.35354 12.4293 6.78799C12.42 6.35096 12.4117 5.98134 12.3965 5.66251Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-eclipse-white font-funnel text-base">
+                    agencia@eclipseroad.com
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-purple-800 rounded-full flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-eclipse-white">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M7.3333 1.229C3.87003 1.229 1.06248 4.03655 1.06248 7.49985C1.06248 8.36371 1.23741 9.18784 1.55418 9.93783C1.63728 10.1346 1.6933 10.2676 1.73072 10.3697C1.76888 10.474 1.77424 10.5117 1.77492 10.5213C1.7787 10.5761 1.76484 10.6506 1.67026 11.0042L1.07735 13.2201C1.03696 13.371 1.08014 13.532 1.19062 13.6425C1.30111 13.753 1.46212 13.7962 1.61306 13.7558L3.82901 13.1629C4.18253 13.0683 4.25701 13.0545 4.31179 13.0583C4.32151 13.0589 4.3592 13.0643 4.46341 13.1024C4.56559 13.1399 4.69854 13.1959 4.8953 13.279C5.64534 13.5957 6.46945 13.7707 7.3333 13.7707C10.7966 13.7707 13.6041 10.9631 13.6041 7.49985C13.6041 4.03655 10.7966 1.229 7.3333 1.229Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-eclipse-white font-funnel text-base">
+                    (18) 99740 - 3693
+                  </span>
+                </div>
+                <p className="text-eclipse-white font-funnel text-sm">
+                  Atendimento de Seg à Sex das 09h às 18h.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
+                Redes sociais
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
+                  <span className="text-eclipse-white font-funnel text-base">
+                    Twitter
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
+                  <span className="text-eclipse-white font-funnel text-base">
+                    Instagram
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
+                  <span className="text-eclipse-white font-funnel text-base">
+                    LinkedIn
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <button className="w-full bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition-opacity">
+                Solicitar orçamento
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                  <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <button className="w-full text-eclipse-white font-funnel text-base px-6 py-3 border-b border-eclipse-purple flex items-center justify-center gap-2 hover:text-eclipse-purple-light transition-colors">
+                Agendar uma call nosso time
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+                  <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div className="pt-8 border-t border-purple-800">
+            <p className="text-eclipse-gray font-funnel text-xs">
+              Eclipse Road © 2025 Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
