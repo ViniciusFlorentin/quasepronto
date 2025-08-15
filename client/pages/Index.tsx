@@ -284,7 +284,7 @@ export default function Index() {
               <h2 className="text-eclipse-white font-funnel text-4xl md:text-6xl font-normal leading-tight">
                 Alcance que se <span className="text-eclipse-purple-light">traduz em resultado</span>
               </h2>
-              <p className="text-eclipse-purple-light font-funnel text-lg md:text-xl max-w-md">
+              <p className="text-eclipse-gray font-funnel text-lg md:text-xl max-w-md">
                 Estes <span className="text-eclipse-purple-light">números são mensais</span> e refletem nosso alcance de forma transparente.
               </p>
             </div>
