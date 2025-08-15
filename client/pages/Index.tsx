@@ -361,24 +361,41 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 md:px-24 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-eclipse-dark to-purple-900 rounded-3xl p-12 relative overflow-hidden">
-            <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%238A4BFF\" fill-opacity=\"0.1\"%3E%3Cpath d=\"m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"}></div>
-            <div className="relative z-10 max-w-2xl">
-              <h2 className="text-eclipse-white font-funnel text-3xl md:text-4xl font-normal mb-6">
+      <section className="bg-eclipse-light flex justify-center items-center px-6 md:px-24 py-20">
+        <div className="max-w-7xl mx-auto w-full">
+          <div
+            className="flex w-full max-w-[1248px] h-[392px] p-12 rounded-3xl mx-auto relative overflow-hidden"
+            style={{
+              backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Feeff4ffa78ca40febc9ed7df855c59ad%2Ff0be1220924c437e8f979f9df7a7ee18?format=webp&width=800')`,
+              backgroundColor: '#0C0B0E',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="flex flex-col items-start gap-12 max-w-[611px] relative z-10">
+              <h2 className="text-eclipse-white font-funnel text-3xl md:text-4xl font-normal leading-[110%] m-0">
                 Empresas, influenciadores e freelancers, vamos conversar?
               </h2>
-              <p className="text-eclipse-gray font-funnel text-lg mb-8">
+
+              <p className="text-eclipse-gray font-funnel text-lg font-normal leading-[140%] m-0">
                 Uma parceria <span className="text-eclipse-purple-light">estratégica para alcançar resultados</span> e fortalecer a sua presença digital.
               </p>
-              <button className="bg-eclipse-purple text-eclipse-white font-funnel text-base px-8 py-4 rounded-full flex items-center gap-3 hover:bg-opacity-90 transition-opacity">
-                Agende uma call com nosso time
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                  <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+
+              {/* Special Button with LED effect */}
+              <div className="inline-flex p-1 rounded-full border-t border-[#A352FF] border-b border-[#2d0b59] border-l border-[#2d0b59] border-r border-[#2d0b59] shadow-[0px_0px_12px_-4px_#A352FF]">
+                <button className="flex items-center gap-2 text-decoration-none group">
+                  <span className="flex items-center h-12 px-6 rounded-full bg-eclipse-purple text-eclipse-white font-funnel text-base font-medium leading-[100%] transition-colors duration-300 group-hover:bg-[#7B34FF]">
+                    Agende uma call com nosso time
+                  </span>
+
+                  <div className="flex justify-center items-center w-12 h-12 rounded-full bg-eclipse-purple flex-shrink-0 transition-colors duration-300 group-hover:bg-[#7B34FF]">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M20.0001 11.9998H4.00012" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15.0003 17C15.0003 17 20.0002 13.3176 20.0002 12C20.0002 10.6824 15.0002 7 15.0002 7" stroke="#FDFCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
