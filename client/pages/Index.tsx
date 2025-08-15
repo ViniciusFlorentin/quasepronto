@@ -49,16 +49,22 @@ const ServiceCard = ({ icon, title, description, className = "" }: {
 );
 
 const StatCard = ({ value, label }: { value: string; label: string }) => (
-  <div className="relative">
-    <div className="bg-eclipse-dark border border-eclipse-border-purple rounded-2xl p-8 space-y-4">
-      <div className="text-eclipse-purple-light font-funnel text-4xl md:text-5xl font-bold">
+  <div className="relative w-full h-[170px]">
+    {/* Background card with border */}
+    <div className="absolute inset-0 bg-transparent border border-eclipse-border-purple rounded-2xl"></div>
+
+    {/* Top highlight border */}
+    <div className="absolute inset-0 bg-transparent border-t-2 border-eclipse-purple-light rounded-2xl"></div>
+
+    {/* Content */}
+    <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+      <div className="text-eclipse-purple-light font-funnel text-4xl md:text-5xl lg:text-6xl font-bold leading-none">
         {value}
       </div>
-      <div className="text-eclipse-white font-funnel text-lg">
+      <div className="text-eclipse-white font-funnel text-base md:text-lg leading-tight">
         {label}
       </div>
     </div>
-    <div className="absolute inset-0 bg-eclipse-dark border-t border-eclipse-purple-light rounded-2xl pointer-events-none"></div>
   </div>
 );
 
