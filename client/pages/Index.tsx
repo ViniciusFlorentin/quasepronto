@@ -34,7 +34,7 @@ const ServiceCard = ({ icon, title, description, className = "" }: {
   className?: string;
 }) => (
   <div className={`bg-eclipse-dark p-8 md:p-16 rounded-2xl md:rounded-3xl flex flex-col gap-6 ${className}`}>
-    <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center border-4 border-eclipse-purple-light">
+    <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
       {icon}
     </div>
     <div className="space-y-4">
