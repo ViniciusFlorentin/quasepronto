@@ -652,7 +652,7 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-eclipse-dark to-purple-900 px-6 md:px-24 py-16">
+      <footer className="w-full px-6 md:px-24 py-12 flex flex-col items-start gap-13" style={{background: 'linear-gradient(94deg, #100426 0.37%, #291057 101.37%)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="text-eclipse-white font-funnel text-xl font-bold mb-8">
