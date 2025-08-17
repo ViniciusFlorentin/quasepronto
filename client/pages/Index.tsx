@@ -313,140 +313,188 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section className="px-6 md:px-24 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-16">
-            <div className="space-y-6">
-              <h2 className="text-eclipse-dark font-funnel text-4xl md:text-6xl font-normal leading-tight">
+      <section className="bg-eclipse-light px-6 md:px-24 py-20">
+        <div className="max-w-[1248px] mx-auto">
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row items-end justify-between gap-8 lg:gap-[279px] mb-16">
+            <div className="flex flex-col gap-6">
+              <h2 className="text-eclipse-dark font-funnel text-4xl md:text-6xl font-normal leading-[110%]">
                 Nossos
                 <br />
                 serviços
               </h2>
             </div>
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 bg-eclipse-light-purple rounded-full flex items-center justify-center">
+            <div className="flex flex-col items-end gap-6">
+              <div className="w-16 h-16 bg-[#D5CDE5] rounded-full flex items-center justify-center">
                 <svg
                   width="32"
                   height="32"
                   viewBox="0 0 32 32"
                   fill="none"
-                  className="text-eclipse-dark"
                 >
                   <path
                     d="M14.0218 2.7239C14.2611 3.03528 14.296 3.45789 14.111 3.8043C13.3324 5.26249 12.8906 6.92805 12.8906 8.69976C12.8906 14.4489 17.5511 19.1094 23.3002 19.1094C25.0719 19.1094 26.7375 18.6676 28.1956 17.889C28.542 17.704 28.9647 17.7389 29.276 17.9782C29.5875 18.2176 29.7299 18.6169 29.6403 18.9993C28.2075 25.1132 22.7212 29.6666 16.1692 29.6666C8.52789 29.6666 2.33337 23.4721 2.33337 15.8308C2.33337 9.2787 6.88677 3.79256 13.0007 2.35968C13.3831 2.27006 13.7824 2.41254 14.0218 2.7239Z"
-                    fill="currentColor"
+                    fill="#100426"
                   />
                 </svg>
               </div>
-              <p className="text-eclipse-gray font-funnel text-lg md:text-xl max-w-sm">
-                Conheça as soluções que oferecemos para conectar marcas,
-                criadores e resultados em diferentes plataformas.
+              <p className="text-[#716C7A] font-funnel text-lg md:text-xl leading-[140%] max-w-sm text-right">
+                Conheça as soluções que oferecemos para conectar marcas, criadores e resultados em diferentes plataformas.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ServiceCard
-              className="lg:col-span-1 rounded-t-[4rem] rounded-br-2xl rounded-bl-2xl"
-              icon={
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-eclipse-dark"
-                >
-                  <path
-                    d="M2.3569 2.78113C2.52359 2.45513 2.85886 2.25 3.225 2.25H8.1C8.41308 2.25 8.70711 2.40034 8.89041 2.65415L13.5354 9.08571L20.0856 2.53557C20.4663 2.15481 21.0837 2.15481 21.4644 2.53557C21.8452 2.91633 21.8452 3.53367 21.4644 3.91443L14.6919 10.687L21.5654 20.2041C21.7798 20.501 21.8098 20.8929 21.6431 21.2189C21.4764 21.5449 21.1411 21.75 20.775 21.75H15.9C15.5869 21.75 15.2929 21.5997 15.1096 21.3459L10.4646 14.9143L3.91443 21.4644C3.53367 21.8452 2.91634 21.8452 2.53557 21.4644C2.15481 21.0837 2.15481 20.4663 2.53557 20.0856L9.30811 13.313L2.43459 3.79585C2.22022 3.49903 2.19021 3.10713 2.3569 2.78113Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              }
-              title="Facilitando o marketing pelo Twitter"
-              description="No X, transformamos ideias em resultados. Somos especialistas em ampliar o alcance das suas campanhas e levar sua marca para novas redes e públicos."
-            />
-
-            <ServiceCard
-              icon={
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-eclipse-dark"
-                >
-                  <path
-                    d="M11.1525 1.31827C11.2667 1.25339 11.4052 1.253 11.6823 1.25222L11.8881 1.25161C12.8696 1.24865 13.8524 1.24568 14.833 1.28283C15.2678 1.29931 15.4853 1.30755 15.5666 1.45848C15.648 1.60941 15.5338 1.79812 15.3055 2.17554L12.9793 6.02089C12.8368 6.25655 12.7655 6.37438 12.6512 6.43884C12.5368 6.50329 12.3991 6.50329 12.1237 6.50329H8.67266C8.35944 6.50329 8.20282 6.50329 8.14538 6.40183C8.08793 6.30037 8.16851 6.16608 8.32966 5.8975L10.825 1.73861C10.9672 1.50164 11.0383 1.38314 11.1525 1.31827Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              }
-              title="Conteúdo profissional para sua marca"
-              description="Impulsione seus resultados com uma estratégia de conteúdo dinâmica, que prende a atenção, fortalece sua marca e mantém seu público engajado."
-            />
-
-            <ServiceCard
-              icon={
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-eclipse-dark"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M3.25 10.9286C3.25 6.1356 7.16751 2.25012 12 2.25012C16.8325 2.25012 20.75 6.1356 20.75 10.9286C20.75 12.5077 20.3239 13.9911 19.5788 15.2685C19.3099 15.7295 18.7152 15.887 18.2504 15.6204C17.7857 15.3537 17.6268 14.7638 17.8957 14.3029C18.4742 13.311 18.8056 12.1596 18.8056 10.9286C18.8056 7.20071 15.7586 4.17867 12 4.17867C8.2414 4.17867 5.19444 7.20071 5.19444 10.9286C5.19444 12.1596 5.52583 13.311 6.10431 14.3029C6.37317 14.7638 6.21435 15.3537 5.74957 15.6204C5.28479 15.887 4.69005 15.7295 4.42119 15.2685C3.67612 13.9911 3.25 12.5077 3.25 10.9286Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              }
-              title="Criação de campanhas e textos persuasivos"
-              description="Adaptamos cada campanha ao seu público e às exigências de cada plataforma, garantindo uma comunicação eficaz e a expansão da sua marca."
-            />
-
-            <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <ServiceCard
-                icon={
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-eclipse-dark"
-                  >
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Row 1 - 3 Cards */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-[405px] h-[362px] bg-eclipse-dark rounded-[64px_16px_16px_16px] p-16 flex flex-col gap-6">
+                <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
-                      d="M16.999 11.9704C16.999 12.5227 16.5513 12.9704 15.999 12.9704C15.8307 12.9704 15.6722 12.9288 15.533 12.8554C15.5101 12.8433 15.4896 12.8273 15.4712 12.809L14.1681 11.5114C14.0604 11.4041 13.8895 11.3947 13.7689 11.4872C11.3507 13.3419 8.86807 14.2442 6.80123 14.6632C5.38063 14.9512 4.15687 15.0112 3.28244 14.9984C2.99883 14.9943 2.75131 14.9825 2.54501 14.9683C2.37972 14.9569 2.25895 14.81 2.27482 14.6451L2.40894 13.2515C2.42481 13.0866 2.57131 12.9661 2.73666 12.9766C2.89837 12.9869 3.09118 12.9954 3.31153 12.9986C4.06968 13.0097 5.14769 12.9577 6.40387 12.7031C8.14149 12.3508 10.2209 11.6114 12.276 10.1066C12.4225 9.99939 12.4363 9.78692 12.3077 9.65883L11.15 8.50604C11.1293 8.48541 11.1114 8.462 11.0986 8.43568C11.0348 8.30399 10.999 8.15619 10.999 8.00001C10.999 7.44773 11.4467 7.00001 11.999 7.00001H14.0532C14.4775 6.99993 14.8891 6.99985 15.2286 7.04514C15.6104 7.0961 16.0471 7.2202 16.4106 7.58101C16.7751 7.94284 16.9015 8.37929 16.9533 8.76183C16.9992 9.10024 16.9991 9.51023 16.999 9.93069V11.9704Z"
-                      fill="currentColor"
+                      d="M2.3569 2.78113C2.52359 2.45513 2.85886 2.25 3.225 2.25H8.1C8.41308 2.25 8.70711 2.40034 8.89041 2.65415L13.5354 9.08571L20.0856 2.53557C20.4663 2.15481 21.0837 2.15481 21.4644 2.53557C21.8452 2.91633 21.8452 3.53367 21.4644 3.91443L14.6919 10.687L21.5654 20.2041C21.7798 20.501 21.8098 20.8929 21.6431 21.2189C21.4764 21.5449 21.1411 21.75 20.775 21.75H15.9C15.5869 21.75 15.2929 21.5997 15.1096 21.3459L10.4646 14.9143L3.91443 21.4644C3.53367 21.8452 2.91634 21.8452 2.53557 21.4644C2.15481 21.0837 2.15481 20.4663 2.53557 20.0856L9.30811 13.313L2.43459 3.79585C2.22022 3.49903 2.19021 3.10713 2.3569 2.78113Z"
+                      fill="#100426"
                     />
                   </svg>
-                }
-                title="Relacionamentos que impulsionam resultados"
-                description="Fazemos o match entre criadores e marcas alinhadas em valores e objetivos, fortalecendo cada parceria com propósito e resultado."
-              />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-eclipse-purple-light font-funnel text-2xl font-bold leading-[120%] tracking-[0.24px]">
+                    Facilitando o marketing
+                    <br />
+                    pelo Twitter
+                  </h3>
+                  <p className="text-eclipse-light font-funnel text-base leading-[140%]">
+                    No X, transformamos ideias em resultados. Somos especialistas em ampliar o alcance das suas campanhas e levar sua marca para novas redes e públicos.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-              <ServiceCard
-                className="rounded-t-2xl rounded-bl-2xl rounded-br-[4rem]"
-                icon={
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-eclipse-dark"
-                  >
+            <div className="flex justify-center">
+              <div className="w-full max-w-[405px] h-[362px] bg-eclipse-dark rounded-2xl p-16 flex flex-col gap-6">
+                <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M11.1525 1.31827C11.2667 1.25339 11.4052 1.253 11.6823 1.25222L11.8881 1.25161C12.8696 1.24865 13.8524 1.24568 14.833 1.28283C15.2678 1.29931 15.4853 1.30755 15.5666 1.45848C15.648 1.60941 15.5338 1.79812 15.3055 2.17554L12.9793 6.02089C12.8368 6.25655 12.7655 6.37438 12.6512 6.43884C12.5368 6.50329 12.3991 6.50329 12.1237 6.50329H8.67266C8.35944 6.50329 8.20282 6.50329 8.14538 6.40183C8.08793 6.30037 8.16851 6.16608 8.32966 5.8975L10.825 1.73861C10.9672 1.50164 11.0383 1.38314 11.1525 1.31827Z"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M8.5907 1.37405C8.53003 1.27193 8.37165 1.27782 8.0549 1.28959C7.36371 1.31527 6.7436 1.35908 6.18802 1.43377C4.81137 1.61886 3.71911 2.00589 2.86091 2.86409C1.99797 3.72703 1.62446 4.88275 1.44949 6.06049C1.41938 6.26317 1.40433 6.36451 1.46417 6.43389C1.524 6.50327 1.62901 6.50327 1.83901 6.50327H5.09742C5.37539 6.50327 5.51438 6.50327 5.6294 6.4378C5.74441 6.37233 5.81537 6.25282 5.95728 6.0138L8.40681 1.88808C8.56985 1.61347 8.65137 1.47617 8.5907 1.37405Z"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M18.6711 1.89701C18.3653 1.77116 18.2124 1.70824 18.0375 1.76509C17.8627 1.82195 17.7656 1.97976 17.5714 2.29538L15.357 5.89364C15.191 6.16348 15.108 6.2984 15.1652 6.40084C15.2224 6.50328 15.3809 6.50328 15.6977 6.50328H21.161C21.371 6.50328 21.476 6.50328 21.5358 6.4339C21.5957 6.36452 21.5806 6.26318 21.5505 6.0605C21.3756 4.88276 21.002 3.72704 20.1391 2.8641C19.7103 2.43531 19.2231 2.12414 18.6711 1.89701Z"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M21.6183 8.61873C21.7352 8.73417 21.7374 8.91701 21.7419 9.28271C21.75 9.94707 21.75 10.6667 21.75 11.4458V11.5604C21.75 11.8083 21.75 12.0501 21.7497 12.2861C21.7493 12.6966 21.7491 12.9019 21.6316 12.9918C21.5142 13.0817 21.2941 13.0226 20.8538 12.9043C19.8055 12.6227 18.816 12.75 18.0002 13.0874C16.8568 12.6145 15.3721 12.5543 13.8626 13.4544C12.2483 14.417 11.5499 16.2871 11.8008 18.1058C11.9235 18.995 12.2597 19.8658 12.7951 20.6886C13.1203 21.1883 13.2829 21.4382 13.1979 21.5951C13.1129 21.752 12.8341 21.7523 12.2766 21.7529C12.0426 21.7532 11.8029 21.7532 11.5572 21.7532H11.4428C9.2521 21.7532 7.53144 21.7532 6.18802 21.5726C4.81137 21.3875 3.71911 21.0005 2.86091 20.1423C2.00272 19.2841 1.61568 18.1918 1.43059 16.8152C1.24998 15.4718 1.24999 13.7511 1.25 11.5604V11.446C1.25 10.6669 1.24999 9.9471 1.25811 9.28271C1.26259 8.91701 1.26482 8.73417 1.38167 8.61873C1.49853 8.5033 1.68305 8.5033 2.0521 8.5033H20.9479C21.3169 8.5033 21.5015 8.5033 21.6183 8.61873Z"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M18 14.7893C18.7729 14.2397 20.02 13.9381 21.3694 14.7427C22.3758 15.3428 22.8975 16.567 22.7135 17.9007C22.5281 19.2446 21.6457 20.6869 19.9024 21.9412C19.3484 22.3409 18.7813 22.75 18 22.75C17.2187 22.75 16.6516 22.3409 16.0976 21.9412C14.3543 20.6869 13.4719 19.2446 13.2865 17.9007C13.1025 16.567 13.6242 15.3428 14.6306 14.7427C15.98 13.9381 17.2271 14.2397 18 14.7893Z"
+                      fill="#100426"
+                    />
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-eclipse-purple-light font-funnel text-2xl font-bold leading-[120%] tracking-[0.24px]">
+                    Conteúdo profissional para sua marca
+                  </h3>
+                  <p className="text-eclipse-light font-funnel text-base leading-[140%]">
+                    Impulsione seus resultados com uma estratégia de conteúdo dinâmica, que prende a atenção, fortalece sua marca e mantém seu público engajado.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-[405px] h-[362px] bg-eclipse-dark rounded-2xl p-16 flex flex-col gap-6">
+                <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M3.25 10.9286C3.25 6.1356 7.16751 2.25012 12 2.25012C16.8325 2.25012 20.75 6.1356 20.75 10.9286C20.75 12.5077 20.3239 13.9911 19.5788 15.2685C19.3099 15.7295 18.7152 15.887 18.2504 15.6204C17.7857 15.3537 17.6268 14.7638 17.8957 14.3029C18.4742 13.311 18.8056 12.1596 18.8056 10.9286C18.8056 7.20071 15.7586 4.17867 12 4.17867C8.2414 4.17867 5.19444 7.20071 5.19444 10.9286C5.19444 12.1596 5.52583 13.311 6.10431 14.3029C6.37317 14.7638 6.21435 15.3537 5.74957 15.6204C5.28479 15.887 4.69005 15.7295 4.42119 15.2685C3.67612 13.9911 3.25 12.5077 3.25 10.9286Z"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M10.4034 14.4399C7.44608 15.1571 5.25 17.8221 5.25 21C5.25 21.4142 5.58579 21.75 6 21.75H18C18.4142 21.75 18.75 21.4142 18.75 21C18.75 17.8221 16.5539 15.1571 13.5966 14.4399C15.1526 13.8088 16.25 12.2825 16.25 10.5C16.25 8.15279 14.3472 6.25 12 6.25C9.65279 6.25 7.75 8.15279 7.75 10.5C7.75 12.2825 8.84739 13.8088 10.4034 14.4399Z"
+                      fill="#100426"
+                    />
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-eclipse-purple-light font-funnel text-2xl font-bold leading-[120%] tracking-[0.24px]">
+                    Criação de campanhas e textos persuasivos
+                  </h3>
+                  <p className="text-eclipse-light font-funnel text-base leading-[140%]">
+                    Adaptamos cada campanha ao seu público e às exigências de cada plataforma, garantindo uma comunicação eficaz e a expansão da sua marca.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2 - 2 Wider Cards */}
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="w-full max-w-[616px] h-[311px] bg-eclipse-dark rounded-2xl p-16 flex flex-col gap-6">
+                <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M16.999 11.9704C16.999 12.5227 16.5513 12.9704 15.999 12.9704C15.8307 12.9704 15.6722 12.9288 15.533 12.8554C15.5101 12.8433 15.4896 12.8273 15.4712 12.809L14.1681 11.5114C14.0604 11.4041 13.8895 11.3947 13.7689 11.4872C11.3507 13.3419 8.86807 14.2442 6.80123 14.6632C5.38063 14.9512 4.15687 15.0112 3.28244 14.9984C2.99883 14.9943 2.75131 14.9825 2.54501 14.9683C2.37972 14.9569 2.25895 14.81 2.27482 14.6451L2.40894 13.2515C2.42481 13.0866 2.57131 12.9661 2.73666 12.9766C2.89837 12.9869 3.09118 12.9954 3.31153 12.9986C4.06968 13.0097 5.14769 12.9577 6.40387 12.7031C8.14149 12.3508 10.2209 11.6114 12.276 10.1066C12.4225 9.99939 12.4363 9.78692 12.3077 9.65883L11.15 8.50604C11.1293 8.48541 11.1114 8.462 11.0986 8.43568C11.0348 8.30399 10.999 8.15619 10.999 8.00001C10.999 7.44773 11.4467 7.00001 11.999 7.00001H14.0532C14.4775 6.99993 14.8891 6.99985 15.2286 7.04514C15.6104 7.0961 16.0471 7.2202 16.4106 7.58101C16.7751 7.94284 16.9015 8.37929 16.9533 8.76183C16.9992 9.10024 16.9991 9.51023 16.999 9.93069V11.9704Z"
+                      fill="#100426"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M15.75 1.25C16.3023 1.25 16.75 1.69772 16.75 2.25V3.63462C16.75 4.1869 16.3023 4.63462 15.75 4.63462C15.1977 4.63462 14.75 4.1869 14.75 3.63462V2.25C14.75 1.69772 15.1977 1.25 15.75 1.25ZM21.0647 2.92695C21.4555 3.31717 21.456 3.95033 21.0658 4.34116L20.0883 5.32024C19.698 5.71107 19.0649 5.71157 18.674 5.32135C18.2832 4.93113 18.2827 4.29797 18.6729 3.90714L19.6505 2.92807C20.0407 2.53723 20.6738 2.53673 21.0647 2.92695ZM19.3676 8.25C19.3676 7.69772 19.8153 7.25 20.3676 7.25H21.75C22.3023 7.25 22.75 7.69772 22.75 8.25C22.75 8.80228 22.3023 9.25 21.75 9.25H20.3676C19.8153 9.25 19.3676 8.80228 19.3676 8.25Z"
+                      fill="#100426"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M12 3.20455C7.1424 3.20455 3.20455 7.1424 3.20455 12C3.20455 16.8576 7.1424 20.7955 12 20.7955C16.8576 20.7955 20.7955 16.8576 20.7955 12C20.7955 11.4603 21.233 11.0227 21.7727 11.0227C22.3125 11.0227 22.75 11.4603 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C12.5397 1.25 12.9773 1.68754 12.9773 2.22727C12.9773 2.76701 12.5397 3.20455 12 3.20455Z"
+                      fill="#100426"
+                    />
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-eclipse-purple-light font-funnel text-2xl font-bold leading-[120%] tracking-[0.24px]">
+                    Relacionamentos que impulsionam
+                    <br />
+                    resultados
+                  </h3>
+                  <p className="text-eclipse-light font-funnel text-base leading-[140%]">
+                    Fazemos o match entre criadores e marcas alinhadas em valores e objetivos, fortalecendo cada parceria com propósito e resultado.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-[616px] h-[311px] bg-eclipse-dark rounded-[16px_16px_64px_16px] p-16 flex flex-col gap-6">
+                <div className="w-12 h-12 bg-eclipse-light rounded-full flex items-center justify-center shadow-[0_0_0_4px_#DB9EFF]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M3.25006 10.9286C3.25006 6.1356 7.16757 2.25012 12.0001 2.25012C16.8326 2.25012 20.7501 6.1356 20.7501 10.9286C20.7501 12.5077 20.324 13.9911 19.5789 15.2685C19.31 15.7295 18.7153 15.887 18.2505 15.6204C17.7858 15.3537 17.6269 14.7638 17.8958 14.3029C18.4743 13.311 18.8057 12.1596 18.8057 10.9286C18.8057 7.20071 15.7587 4.17867 12.0001 4.17867C8.24146 4.17867 5.1945 7.20071 5.1945 10.9286C5.1945 12.1596 5.52589 13.311 6.10437 14.3029C6.37323 14.7638 6.21441 15.3537 5.74963 15.6204C5.28485 15.887 4.69011 15.7295 4.42125 15.2685C3.67618 13.9911 3.25006 12.5077 3.25006 10.9286Z"
-                      fill="currentColor"
+                      fill="#100426"
+                    />
+                    <path
+                      d="M10.4035 14.44C7.44614 15.1572 5.25006 17.8222 5.25006 21.0001C5.25006 21.4143 5.58585 21.7501 6.00006 21.7501H18.0001C18.4143 21.7501 18.7501 21.4143 18.7501 21.0001C18.7501 17.8222 16.554 15.1572 13.5967 14.44C15.1527 13.8089 16.2501 12.2826 16.2501 10.5001C16.2501 8.15291 14.3473 6.25012 12.0001 6.25012C9.65285 6.25012 7.75006 8.15291 7.75006 10.5001C7.75006 12.2826 8.84745 13.8089 10.4035 14.44Z"
+                      fill="#100426"
                     />
                   </svg>
-                }
-                title="Parceiros de conteúdo"
-                description="Gerenciamos perfis de influenciadores com suporte completo para ampliar seu alcance, influência e desempenho em campanhas publicitárias."
-              />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-eclipse-purple-light font-funnel text-2xl font-bold leading-[120%] tracking-[0.24px]">
+                    Parceiros de conteúdo
+                  </h3>
+                  <p className="text-eclipse-light font-funnel text-base leading-[140%]">
+                    Gerenciamos perfis de influenciadores com suporte completo para ampliar seu alcance, influência e desempenho em campanhas publicitárias.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
