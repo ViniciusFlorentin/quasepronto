@@ -652,155 +652,176 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full px-6 md:px-24 py-12 flex flex-col items-start gap-13" style={{background: 'linear-gradient(94deg, #100426 0.37%, #291057 101.37%)'}}>
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <div className="text-eclipse-white font-funnel text-xl font-bold mb-8">
-              ECLIPSE
+      <footer className="w-full px-6 py-12" style={{background: 'linear-gradient(94deg, #100426 0.37%, #291057 101.37%)'}}>
+        <div className="max-w-[1248px] mx-auto">
+          {/* Main footer content */}
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 mb-8">
+            
+            {/* Eclipse logo */}
+            <div className="flex-shrink-0">
+              <div className="text-eclipse-white font-funnel text-2xl font-bold">
+                ECLIPSE
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div className="space-y-4">
-              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
-                Institucional
+            {/* Vertical divider - hidden on mobile */}
+            <div className="hidden lg:block w-px h-16 bg-[#291057]"></div>
+
+            {/* Institucional */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs font-normal uppercase tracking-wider">
+                INSTITUCIONAL
               </h3>
-              <div className="space-y-3">
+              <div className="flex flex-col gap-3">
                 <Link
                   to="/agency"
-                  className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors"
+                  className="text-eclipse-white font-funnel text-sm font-normal hover:text-eclipse-purple-light transition-colors"
                 >
                   Agenciados
                 </Link>
                 <Link
                   to="/about"
-                  className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors"
+                  className="text-eclipse-white font-funnel text-sm font-normal hover:text-eclipse-purple-light transition-colors"
                 >
                   Sobre nós
                 </Link>
                 <Link
                   to="/team"
-                  className="text-eclipse-white font-funnel text-base block hover:text-eclipse-purple-light transition-colors"
+                  className="text-eclipse-white font-funnel text-sm font-normal hover:text-eclipse-purple-light transition-colors"
                 >
                   Nosso time
                 </Link>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
-                Contato
+            {/* Vertical divider - hidden on mobile */}
+            <div className="hidden lg:block w-px h-16 bg-[#291057]"></div>
+
+            {/* Contato */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs font-normal uppercase tracking-wider">
+                CONTATO
               </h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-800 rounded-full flex items-center justify-center">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      className="text-eclipse-white"
-                    >
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#8A4BFF] rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
                         fillRule="evenodd"
                         clipRule="evenodd"
-                        d="M8.89798 2.12547C7.75709 2.09684 6.90951 2.09685 5.76863 2.12547L5.72497 2.12657C4.8445 2.14864 4.12007 2.1668 3.53618 2.26836C2.91647 2.37615 2.39758 2.58607 1.9581 3.02668C1.52091 3.46498 1.31158 3.97569 1.20554 4.5856C1.10601 5.15797 1.09095 5.8643 1.07272 6.71916L1.07178 6.76314C1.05936 7.34531 1.05937 7.65442 1.0718 8.23653L1.07274 8.28051C1.09096 9.13539 1.10602 9.84169 1.20554 10.4141C1.31159 11.024 1.52092 11.5347 1.9581 11.973C2.39759 12.4136 2.91647 12.6235 3.53619 12.7313C4.12008 12.8329 4.84451 12.851 5.72497 12.8731L5.76864 12.8742C6.90951 12.9028 7.75709 12.9028 8.89798 12.8742L8.94161 12.8731C9.82209 12.851 10.5465 12.8328 11.1305 12.7313C11.7501 12.6235 12.269 12.4136 12.7085 11.973C13.1457 11.5347 13.3551 11.024 13.461 10.4141C13.5606 9.84169 13.5757 9.13539 13.5939 8.28051L13.5948 8.23653C13.6072 7.65436 13.6072 7.34531 13.5948 6.76314L13.5939 6.71922C13.5757 5.86433 13.5606 5.15797 13.461 4.5856C13.355 3.97569 13.1457 3.46498 12.7085 3.02668C12.4616 2.77908 12.1895 2.60433 11.8886 2.4796C11.8428 2.45461 11.7937 2.43576 11.7425 2.42373C11.5502 2.35591 11.3464 2.30593 11.1304 2.26836C10.5465 2.1668 9.82209 2.14864 8.94161 2.12657L8.89798 2.12547ZM12.3965 5.66251C12.3852 5.42596 12.3795 5.30769 12.2939 5.26047C12.2083 5.21325 12.1029 5.27291 11.8923 5.39223L9.42152 6.79225C8.66336 7.22182 8.02222 7.49984 7.33319 7.49984C6.64415 7.49984 6.00299 7.22182 5.24488 6.79225L2.77423 5.39236C2.56364 5.27304 2.45834 5.21337 2.37268 5.26059C2.28703 5.30781 2.28138 5.42609 2.2701 5.66264C2.2549 5.98144 2.24665 6.35102 2.23732 6.78799C2.22524 7.35354 2.22525 7.64614 2.23733 8.21168C2.25676 9.12168 2.27149 9.73943 2.35416 10.2148C2.432 10.6626 2.56186 10.9285 2.78401 11.1512C3.00386 11.3717 3.27346 11.5037 3.73621 11.5842C4.22515 11.6693 4.86287 11.6868 5.79792 11.7102C6.91925 11.7383 7.74735 11.7383 8.86869 11.7102C9.80372 11.6868 10.4415 11.6693 10.9304 11.5842C11.3931 11.5037 11.6627 11.3717 11.8826 11.1512C12.1047 10.9285 12.2346 10.6626 12.3125 10.2148C12.3951 9.73943 12.4099 9.12168 12.4293 8.21168C12.4414 7.64614 12.4414 7.35354 12.4293 6.78799C12.42 6.35096 12.4117 5.98134 12.3965 5.66251Z"
-                        fill="currentColor"
+                        d="M8.89798 2.12547C7.75709 2.09684 6.90951 2.09685 5.76863 2.12547L5.72497 2.12657C4.8445 2.14864 4.12007 2.1668 3.53618 2.26836C2.91647 2.37615 2.39758 2.58607 1.9581 3.02668C1.52091 3.46498 1.31158 3.97569 1.20554 4.5856C1.10601 5.15797 1.09095 5.8643 1.07272 6.71916L1.07178 6.76314C1.05936 7.34531 1.05937 7.65442 1.0718 8.23653L1.07274 8.28051C1.09096 9.13539 1.10602 9.84169 1.20554 10.4141C1.31159 11.024 1.52092 11.5347 1.9581 11.973C2.39759 12.4136 2.91647 12.6235 3.53619 12.7313C4.12008 12.8329 4.84451 12.851 5.72497 12.8731L5.76864 12.8742C6.90951 12.9028 7.75709 12.9028 8.89798 12.8742L8.94161 12.8731C9.82209 12.851 10.5465 12.8328 11.1305 12.7313C11.7501 12.6235 12.269 12.4136 12.7085 11.973C13.1457 11.5347 13.3551 11.024 13.461 10.4141C13.5606 9.84169 13.5757 9.13539 13.5939 8.28051L13.5948 8.23653C13.6072 7.65436 13.6072 7.34531 13.5948 6.76314L13.5939 6.71922C13.5757 5.86433 13.5606 5.15797 13.461 4.5856C13.355 3.97569 13.1457 3.46498 12.7085 3.02668C12.4616 2.77908 12.1895 2.60433 11.8886 2.4796C11.8428 2.45461 11.7937 2.43576 11.7425 2.42373C11.5502 2.35591 11.3464 2.30593 11.1304 2.26836C10.5465 2.1668 9.82209 2.14864 8.94161 2.12657L8.89798 2.12547ZM12.3965 5.66251C12.3852 5.42596 12.3795 5.30769 12.2939 5.26047C12.2083 5.21325 12.1029 5.27291 11.8923 5.39223L9.42152 6.79225C8.66336 7.22182 8.02222 7.49984 7.33319 7.49984C6.64415 7.49984 6.00299 7.22182 5.24488 6.79225L2.77423 5.39236C2.56364 5.27304 2.45834 5.21337 2.37268 5.26059C2.28703 5.30781 2.28138 5.42609 2.2701 5.66264C2.2549 5.98144 2.24665 6.35102 2.23732 6.78799C2.22524 7.35354 2.22525 7.64614 2.23733 8.21168C2.25676 9.12168 2.27149 9.73943 2.35416 10.2148C2.432 10.6626 2.56186 10.9285 2.78401 11.1512C3.00386 11.3717 3.27346 11.5037 3.73621 11.5842C4.22515 11.6693 4.86287 11.6868 5.79792 11.7102C6.91925 11.7383 7.74735 11.7383 8.86869 11.7102C9.80372 11.6868 10.4415 11.6693 10.9304 11.5842C11.3931 11.5037 11.6627 11.3717 11.8826 11.1512C12.1047 10.9285 12.2346 10.6626 12.3123 10.2148C12.395 9.73943 12.4097 9.12168 12.4291 8.21168C12.4412 7.64614 12.4412 7.35354 12.4291 6.78799C12.4198 6.35102 12.4115 5.98144 12.3963 5.66264Z"
+                        fill="#FDFCFF"
                       />
                     </svg>
                   </div>
-                  <span className="text-eclipse-white font-funnel text-base">
+                  <span className="text-eclipse-white font-funnel text-sm font-normal">
                     agencia@eclipseroad.com
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-800 rounded-full flex items-center justify-center">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      className="text-eclipse-white"
-                    >
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#8A4BFF] rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d="M7.3333 1.229C3.87003 1.229 1.06248 4.03655 1.06248 7.49985C1.06248 8.36371 1.23741 9.18784 1.55418 9.93783C1.63728 10.1346 1.6933 10.2676 1.73072 10.3697C1.76888 10.474 1.77424 10.5117 1.77492 10.5213C1.7787 10.5761 1.76484 10.6506 1.67026 11.0042L1.07735 13.2201C1.03696 13.371 1.08014 13.532 1.19062 13.6425C1.30111 13.753 1.46212 13.7962 1.61306 13.7558L3.82901 13.1629C4.18253 13.0683 4.25701 13.0545 4.31179 13.0583C4.32151 13.0589 4.3592 13.0643 4.46341 13.1024C4.56559 13.1399 4.69854 13.1959 4.8953 13.279C5.64534 13.5957 6.46945 13.7707 7.3333 13.7707C10.7966 13.7707 13.6041 10.9631 13.6041 7.49985C13.6041 4.03655 10.7966 1.229 7.3333 1.229Z"
-                        fill="currentColor"
+                        fill="#FDFCFF"
                       />
                     </svg>
                   </div>
-                  <span className="text-eclipse-white font-funnel text-base">
+                  <span className="text-eclipse-white font-funnel text-sm font-normal">
                     (18) 99740 - 3693
                   </span>
                 </div>
-                <p className="text-eclipse-white font-funnel text-sm">
+                <p className="text-eclipse-gray font-funnel text-xs font-normal mt-2">
                   Atendimento de Seg à Sex das 09h às 18h.
                 </p>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-eclipse-gray font-funnel text-xs uppercase">
-                Redes sociais
+            {/* Vertical divider - hidden on mobile */}
+            <div className="hidden lg:block w-px h-16 bg-[#291057]"></div>
+
+            {/* Redes sociais */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-eclipse-gray font-funnel text-xs font-normal uppercase tracking-wider">
+                REDES SOCIAIS
               </h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
-                  <span className="text-eclipse-white font-funnel text-base">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#8A4BFF] rounded-full flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path
+                        d="M8.75 4.375C8.75 4.375 8.75 3.9375 8.75 3.5C8.75 2.625 9.1875 1.75 10.5 1.75H11.375V0H8.75C6.125 0 4.375 1.75 4.375 4.375V5.25H2.625V7H4.375V14H7V7H8.75L10.5 5.25H7V4.375H8.75Z"
+                        fill="#FDFCFF"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-eclipse-white font-funnel text-sm font-normal">
                     Twitter
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
-                  <span className="text-eclipse-white font-funnel text-base">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#8A4BFF] rounded-full flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path
+                        d="M7 3.0625C5.46875 3.0625 4.0625 4.46875 4.0625 6C4.0625 7.53125 5.46875 8.9375 7 8.9375C8.53125 8.9375 9.9375 7.53125 9.9375 6C9.9375 4.46875 8.53125 3.0625 7 3.0625ZM7 7.875C6.0625 7.875 5.125 6.9375 5.125 6C5.125 5.0625 6.0625 4.125 7 4.125C7.9375 4.125 8.875 5.0625 8.875 6C8.875 6.9375 7.9375 7.875 7 7.875ZM10.5 3.0625C10.5 3.5 10.15 3.5 10.15 3.5C9.71875 3.5 9.375 3.15625 9.375 2.71875C9.375 2.28125 9.71875 1.9375 10.15 1.9375C10.5 1.9375 10.5 2.28125 10.5 3.0625ZM12.6875 3.0625C12.6875 2.1875 12.25 1.3125 11.375 0.4375C10.5 -0.4375 9.625 -0.875 8.75 -0.875H5.25C3.5 -0.875 1.75 0.875 1.75 2.625V5.25C1.75 7 3.5 8.75 5.25 8.75H8.75C10.5 8.75 12.25 7 12.25 5.25V2.625C12.25 2.625 12.6875 3.0625 12.6875 3.0625Z"
+                        fill="#FDFCFF"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-eclipse-white font-funnel text-sm font-normal">
                     Instagram
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-800 rounded-full"></div>
-                  <span className="text-eclipse-white font-funnel text-base">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#8A4BFF] rounded-full flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path
+                        d="M3.0625 1.75H0.875V4.375H3.0625V14H5.6875V4.375H8.3125L8.75 1.75H5.6875V1.3125C5.6875 0.875 6.125 0.4375 6.5625 0.4375H8.75V-2.1875H5.6875C4.375 -2.1875 3.0625 -0.875 3.0625 0.4375V1.75Z"
+                        fill="#FDFCFF"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-eclipse-white font-funnel text-sm font-normal">
                     LinkedIn
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <button className="w-full bg-eclipse-purple text-eclipse-white font-funnel text-base px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition-opacity">
-                Solicitar orçamento
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="w-5 h-5"
-                >
-                  <path
-                    d="M20 12H4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              <button className="w-full text-eclipse-white font-funnel text-base px-6 py-3 border-b border-eclipse-purple flex items-center justify-center gap-2 hover:text-eclipse-purple-light transition-colors">
-                Agendar uma call nosso time
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="w-5 h-5"
-                >
+            {/* Vertical divider - hidden on mobile */}
+            <div className="hidden lg:block w-px h-16 bg-[#291057]"></div>
+
+            {/* Buttons */}
+            <div className="flex flex-col gap-4 min-w-[240px]">
+              {/* LED Button with special effect */}
+              <div className="inline-flex p-[1px] rounded-full border-t border-[#A352FF] border-b border-[#2d0b59] border-l border-[#2d0b59] border-r border-[#2d0b59] shadow-[0px_0px_12px_-4px_#A352FF]">
+                <button className="flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-eclipse-purple text-eclipse-white font-funnel text-sm font-medium transition-colors duration-300 hover:bg-[#7B34FF] w-full">
+                  Solicitar orçamento
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M20 12H4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Regular button with border bottom */}
+              <button className="flex items-center justify-center gap-2 h-12 px-6 text-eclipse-white font-funnel text-sm font-medium border-b border-eclipse-purple hover:text-eclipse-purple-light transition-colors">
+                Agendar uma call com nosso time
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M20 12H4"
                     stroke="currentColor"
@@ -820,8 +841,9 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-purple-800">
-            <p className="text-eclipse-gray font-funnel text-xs">
+          {/* Copyright */}
+          <div className="pt-6 border-t border-[#291057]">
+            <p className="text-eclipse-gray font-funnel text-xs font-normal">
               Eclipse Road © 2025 Todos os direitos reservados.
             </p>
           </div>
