@@ -1,5 +1,4 @@
 import { defineConfig, Plugin } from "vite";
-import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { createServer } from "./server";
 
@@ -9,20 +8,22 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     fs: {
-      allow: ["./client", "./shared"],
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
+      allow: ["./public", "./shared"],
+      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**"],
     },
   },
   build: {
     outDir: "dist/spa",
   },
-  plugins: [react(), expressPlugin()],
+  plugins: [expressPlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./client"),
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
+  // Serve static files from public directory
+  publicDir: "public",
+  root: "public",
 }));
 
 function expressPlugin(): Plugin {
