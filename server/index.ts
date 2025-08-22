@@ -23,27 +23,5 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
-  // Serve HTML pages
-  app.get("/", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
-  });
-
-  app.get("/about", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'about.html'));
-  });
-
-  app.get("/team", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'team.html'));
-  });
-
-  app.get("/influencers", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'influencers.html'));
-  });
-
-  // Catch all other routes and serve index.html (for direct URL access)
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
-  });
-
   return app;
 }
